@@ -159,7 +159,7 @@ const FeaturedOffers = () => {
         <div ref={containerRef} style={{ perspective: 1000, overflow: 'visible', backgroundColor: 'transparent', position: 'relative', zIndex: 10, marginTop: '-60px' }}>
             <motion.section
                 className="section-padding pitch-section"
-                id="strategy"
+                id="deals"
                 style={{
                     scale,
                     y,
