@@ -71,8 +71,6 @@ const HowItWorks = () => {
                 </svg>
             </div>
 
-            </div>
-
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                 <motion.div
                     className="section-header"
@@ -124,7 +122,7 @@ const HowItWorks = () => {
                     ))}
                 </div>
             </div>
-        </section >
+        </section>
     );
 };
 
