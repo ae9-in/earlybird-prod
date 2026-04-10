@@ -22,6 +22,14 @@ const Header = () => {
                 className={`main-header ${isScrolled ? 'scrolled' : ''}`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
+                style={{
+                    backgroundColor: isScrolled ? 'rgba(255, 248, 236, 0.95)' : 'transparent',
+                    WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
+                    backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+                    borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.4)' : 'none',
+                    boxShadow: isScrolled ? '0 4px 30px rgba(84, 107, 65, 0.05)' : 'none',
+                    zIndex: 9999
+                }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className="container header-container">
