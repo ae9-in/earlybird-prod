@@ -33,8 +33,8 @@ const HowItWorks = () => {
     return (
         <section className="section-padding how-it-works" id="how-it-works" style={{ position: 'relative', overflow: 'hidden' }}>
             {/* Animated Market Graph Background */}
-            <div style={{ position: 'absolute', top: '10%', left: 0, width: '100%', height: '80%', zIndex: 0, opacity: 0.25, pointerEvents: 'none' }}>
-                <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none">
+            <div style={{ position: 'absolute', top: '10%', left: 0, width: '100%', height: '80%', zIndex: 1, opacity: 0.15, pointerEvents: 'none' }}>
+                <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" style={{ opacity: 0.8 }}>
                     <defs>
                         <linearGradient id="marketGradient" x1="0" x2="0" y1="0" y2="1">
                             <stop offset="0%" stopColor="var(--primary-dark-green)" stopOpacity="0.6" />
@@ -71,7 +71,9 @@ const HowItWorks = () => {
                 </svg>
             </div>
 
-            <div className="container relative z-10">
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                 <motion.div
                     className="section-header"
                     initial={{ opacity: 0, y: 20 }}
@@ -122,7 +124,7 @@ const HowItWorks = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
