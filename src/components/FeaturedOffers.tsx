@@ -143,7 +143,7 @@ const FeaturedOffers = () => {
     const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
     return (
-        <div ref={containerRef} style={{ perspective: 1000, overflow: 'hidden', backgroundColor: 'var(--background-cream)' }}>
+        <div ref={containerRef} style={{ perspective: 1000, overflow: 'visible', backgroundColor: 'transparent', position: 'relative', zIndex: 10, marginTop: '-60px' }}>
             <motion.section
                 className="section-padding pitch-section"
                 id="strategy"
@@ -157,7 +157,9 @@ const FeaturedOffers = () => {
                     borderTopLeftRadius: '48px',
                     borderTopRightRadius: '48px',
                     paddingBottom: '8rem',
-                    boxShadow: '0 -20px 50px rgba(0,0,0,0.1)'
+                    boxShadow: '0 -20px 50px rgba(0,0,0,0.1)',
+                    position: 'relative',
+                    zIndex: 20
                 }}
             >
                 <div className="container">
