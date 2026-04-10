@@ -99,6 +99,9 @@ const TiltCard = ({ card, index }: { card: PitchCard; index: number }) => {
                 style={{
                     transform: "translateZ(30px)",
                     transformStyle: "preserve-3d",
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)', // Forced opacity
+                    borderRadius: '20px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
             >
                 <div
@@ -185,7 +188,16 @@ const FeaturedOffers = () => {
                         <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', color: 'rgba(255,248,236,0.8)' }}>Skip the traditional marketing agency. We build explosive drop events for products that deserve the spotlight.</p>
                     </motion.div>
 
-                    <div className="pitch-grid">
+                    <div
+                        className="pitch-grid"
+                        style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: '2.5rem',
+                            marginTop: '5rem',
+                            perspective: '1500px'
+                        }}
+                    >
                         {pitchCards.map((card, index) => (
                             <TiltCard key={card.id} card={card} index={index} />
                         ))}

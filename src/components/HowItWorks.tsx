@@ -84,7 +84,15 @@ const HowItWorks = () => {
                     <p>A seamless bridge between high-growth brands and eager early adopters.</p>
                 </motion.div>
 
-                <div className="process-grid">
+                <div
+                    className="process-grid"
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(4, 1fr)', // Forced 4-column parity
+                        gap: '1.5rem',
+                        marginTop: '3rem'
+                    }}
+                >
                     {steps.map((step, index) => (
                         <motion.div
                             key={step.id}
@@ -93,6 +101,13 @@ const HowItWorks = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: 0.1 * index }}
+                            style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.95)', // Forced opacity
+                                borderRadius: '20px',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                padding: '2rem',
+                                position: 'relative'
+                            }}
                         >
                             <div className="step-number">0{step.id}</div>
                             <div className="icon-wrapper">
