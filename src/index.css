@@ -7,14 +7,30 @@
   --background-cream: #FFF8EC;
   --text-dark: #1F2818;
   --text-light: #F9F9F9;
-  
+
   --shadow-sm: 0 4px 12px rgba(84, 107, 65, 0.08);
   --shadow-md: 0 8px 24px rgba(84, 107, 65, 0.12);
   --shadow-lg: 0 16px 48px rgba(84, 107, 65, 0.16);
   --shadow-glass: 0 8px 32px 0 rgba(84, 107, 65, 0.05);
-  
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  /* More solid for production legibility */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.pitch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Force 3 columns for parity with localhost */
+  gap: 2.5rem;
+  margin-top: 5rem;
+  perspective: 1500px;
+}
+
+@media (max-width: 992px) {
+  .pitch-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 * {
@@ -33,7 +49,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -135,9 +156,20 @@ button {
 }
 
 @keyframes pulse-soft {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .badge-pulse {
