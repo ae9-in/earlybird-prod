@@ -1,13 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, MoveRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import './Hero.css';
 
 const Hero = () => {
     const { scrollY } = useScroll();
     const scale = useTransform(scrollY, [0, 1000], [1, 1.1]);
-    const y1 = useTransform(scrollY, [0, 1000], [0, 300]);
-    const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -69,58 +67,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Decorative Graphic Element rather than plain cards */}
-                <div className="hero-visuals">
-                    <motion.div
-                        className="floating-card glass-panel premium-glass"
-                        style={{ y: y1 }}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 0.6 }}
-                    >
-                        <div className="card-header">
-                            <div
-                                className="brand-avatar bg-cover"
-                                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=200)' }}
-                            ></div>
-                            <div className="brand-info">
-                                <h4>Partner Growth</h4>
-                                <p>Volume Acquired</p>
-                            </div>
-                        </div>
-                        <div className="card-price">
-                            <span className="discounted">12.5k</span>
-                            <span style={{ color: 'var(--primary-dark-green)', fontWeight: '600' }}>Users</span>
-                        </div>
-                        <div className="progress-bar">
-                            <div className="progress-fill" style={{ width: '100%' }}></div>
-                        </div>
-                        <p className="inventory-text">Sold Out in 4h</p>
-                    </motion.div>
 
-                    <motion.div
-                        className="floating-card glass-panel premium-glass card-small"
-                        style={{ y: y2 }}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 0.8 }}
-                    >
-                        <div className="card-image-bg" style={{
-                            backgroundImage: 'url(https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&q=80&w=400)',
-                            height: '80px',
-                            borderRadius: '12px',
-                            marginBottom: '1rem',
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center'
-                        }}></div>
-                        <div className="card-header" style={{ marginBottom: 0 }}>
-                            <div className="brand-info">
-                                <h4>Conversion</h4>
-                                <div className="stat-growth">+340% <MoveRight className="up-icon" size={14} /></div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
             </div>
         </section>
     );

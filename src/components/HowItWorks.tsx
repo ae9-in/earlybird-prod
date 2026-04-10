@@ -84,46 +84,40 @@ const HowItWorks = () => {
                     <p>A seamless bridge between high-growth brands and eager early adopters.</p>
                 </motion.div>
 
-                <div className="timeline-container">
-                    <div className="timeline-line"></div>
-
+                <div className="process-grid">
                     {steps.map((step, index) => (
                         <motion.div
                             key={step.id}
-                            className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-                            initial={{ opacity: 0, y: 50 }}
+                            className="process-card glass-panel"
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-20%" }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, delay: 0.1 * index }}
                         >
-                            <motion.div
-                                className="timeline-content glass-panel"
-                            >
-                                <div className="step-number">0{step.id}</div>
-                                <div className="icon-wrapper">
-                                    {step.icon}
-                                </div>
-                                <h3>{step.title}</h3>
-                                <p>{step.description}</p>
-                            </motion.div>
-                            <div className="timeline-dot"></div>
+                            <div className="step-number">0{step.id}</div>
+                            <div className="icon-wrapper">
+                                {step.icon}
+                            </div>
+                            <h3>{step.title}</h3>
+                            <p>{step.description}</p>
 
                             {/* Decorative huge watermark number behind each step */}
-                            <motion.div
+                            <div
                                 className="step-watermark"
                                 style={{
                                     position: 'absolute',
-                                    fontSize: '12rem',
+                                    fontSize: '8rem',
                                     fontWeight: 900,
                                     color: 'rgba(84, 107, 65, 0.04)',
                                     zIndex: -2,
-                                    top: '-4rem',
-                                    [index % 2 === 0 ? 'right' : 'left']: '10%',
+                                    bottom: '-1rem',
+                                    right: '-0.5rem',
+                                    lineHeight: 1,
                                     userSelect: 'none'
                                 }}
                             >
                                 0{step.id}
-                            </motion.div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
