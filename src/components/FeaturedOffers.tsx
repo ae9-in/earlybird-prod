@@ -34,7 +34,17 @@ const pitchCards = [
     }
 ];
 
-const TiltCard = ({ card, index }: { card: any; index: number }) => {
+interface PitchCard {
+    id: string;
+    tag: string;
+    title: string;
+    description: string;
+    image: string;
+    stat: string;
+    statLabel: string;
+}
+
+const TiltCard = ({ card, index }: { card: PitchCard; index: number }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const x = useMotionValue(0);
