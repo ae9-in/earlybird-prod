@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# Early Bird - Premium Startup Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-converting, ultra-premium landing page for **Early Bird**, featuring modern startup aesthetics (Stripe/Apple-style), advanced scroll animations, and interactive 3D physics.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Hero Section**: High-impact partnership visuals with horizontal gradient masking for perfect text legibility.
+- **Process Timeline**: Elegant vertical timeline with massive decorative watermarks and animated SVG market graphs.
+- **Strategy Section**: 3D Tilt interactive cards developed with Framer Motion.
+- **Micro-interactions**: Magnetic buttons and hardware-accelerated scroll effects.
+- **Database Schema**: Pre-configured `earlybird_schema.sql` for PostgreSQL/Neon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Tech Stack
+- React 19 + TypeScript
+- Vite
+- Framer Motion
+- Lucide React Icons
+- Vanilla CSS (for maximum design control)
 
-## React Compiler
+## 📦 Deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Vercel Settings
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
 
-## Expanding the ESLint configuration
+### Environment Variables
+| Variable | Description |
+| :--- | :--- |
+| `VITE_NEON_DATABASE_URL` | Neon Postgres Connection String |
+| `VITE_SITE_URL` | Production URL |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🏗 Setup
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📄 License
+MIT
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
