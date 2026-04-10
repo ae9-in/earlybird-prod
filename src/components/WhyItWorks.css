@@ -1,0 +1,181 @@
+.why-it-works {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.why-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark-green);
+}
+
+.why-content .subtitle {
+    font-size: 1.125rem;
+    color: rgba(31, 40, 24, 0.7);
+    margin-bottom: 3rem;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.benefits-list li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    color: var(--secondary-green);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.benefits-list h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.benefits-list p {
+    color: rgba(31, 40, 24, 0.7);
+    font-size: 0.95rem;
+}
+
+.why-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.visual-card {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--background-cream);
+    border-radius: 24px;
+    z-index: 2;
+    position: relative;
+}
+
+.visual-card .card-header.border-bottom {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(84, 107, 65, 0.1);
+}
+
+.visual-card .card-header h4 {
+    font-size: 1.125rem;
+    color: var(--text-dark);
+}
+
+.chart-container {
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    height: 240px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.chart-bar {
+    width: 12%;
+    background: linear-gradient(to top, rgba(153, 173, 122, 0.3), var(--secondary-green));
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chart-bar:hover {
+    background: linear-gradient(to top, rgba(84, 107, 65, 0.6), var(--primary-dark-green));
+}
+
+.bar-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-dark);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.chart-bar:hover .bar-tooltip {
+    opacity: 1;
+}
+
+.growth-line {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+    height: 150px;
+    z-index: 2;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(84, 107, 65, 0.1);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: rgba(31, 40, 24, 0.6);
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.decorative-circle {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 204, 172, 0.4) 0%, rgba(220, 204, 172, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}

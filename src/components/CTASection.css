@@ -1,0 +1,123 @@
+.cta-section {
+    position: relative;
+    padding: 8rem 0;
+    background-color: var(--primary-dark-green);
+    overflow: hidden;
+    color: white;
+}
+
+.cta-bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.glow-1,
+.glow-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out alternate;
+}
+
+.glow-1 {
+    background-color: var(--secondary-green);
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -100px;
+}
+
+.glow-2 {
+    background-color: var(--soft-beige);
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -100px;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50px, 100px) scale(0.9);
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 2rem;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.cta-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-btn {
+    background-color: var(--soft-beige);
+    color: var(--primary-dark-green);
+    padding: 1.25rem 3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    background-color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}

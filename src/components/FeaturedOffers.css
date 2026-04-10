@@ -1,0 +1,138 @@
+.pitch-section {
+    position: relative;
+}
+
+.pitch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 5rem;
+    perspective: 1500px;
+}
+
+.pitch-card-wrapper {
+    height: 100%;
+}
+
+.pitch-card {
+    height: 100%;
+    border-radius: 20px;
+    overflow: visible;
+    /* Fix 3D rendering issues */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    /* Better base shadow */
+    transition: box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.pitch-card:hover {
+    box-shadow: 0 50px 100px rgba(84, 107, 65, 0.2);
+}
+
+.pitch-image-wrapper {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: -1rem -1rem 0 -1rem;
+    /* Overflow slightly for 3D POP */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pitch-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.pitch-card-wrapper:hover .pitch-image {
+    transform: scale(1.08);
+}
+
+.pitch-tag-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    color: var(--primary-dark-green);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pitch-content {
+    padding: 2.5rem 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pitch-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.pitch-desc {
+    font-size: 1.05rem;
+    color: rgba(31, 40, 24, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    flex: 1;
+}
+
+.pitch-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 1.5rem;
+}
+
+.pitch-stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-stat-val {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary-dark-green);
+}
+
+.p-stat-label {
+    font-size: 0.85rem;
+    color: rgba(31, 40, 24, 0.6);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+}
+
+.pitch-action-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--primary-dark-green);
+    color: var(--primary-dark-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
