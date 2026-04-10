@@ -23,17 +23,18 @@ const Header = () => {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 style={{
-                    backgroundColor: isScrolled ? 'rgba(255, 248, 236, 0.95)' : 'transparent',
+                    backgroundColor: isScrolled ? '#FFF8EC' : 'transparent', // Using hex for absolute stability
                     WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
                     backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-                    borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.4)' : 'none',
-                    boxShadow: isScrolled ? '0 4px 30px rgba(84, 107, 65, 0.05)' : 'none',
-                    zIndex: 9999
+                    borderBottom: isScrolled ? '1px solid rgba(84, 107, 65, 0.1)' : 'none',
+                    boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.08)' : 'none',
+                    zIndex: 99999, // Extreme priority
+                    transition: 'background-color 0.3s ease'
                 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className="container header-container">
-                    <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="brand-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="brand-logo" style={{ textDecoration: 'none', color: isScrolled ? 'var(--primary-dark-green)' : 'var(--text-dark)', fontWeight: 800 }}>
                         Early Bird<span>.</span>
                     </a>
 
