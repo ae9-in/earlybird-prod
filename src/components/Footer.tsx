@@ -41,7 +41,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Early Bird. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Early Bird. All rights reserved. <span style={{ opacity: 0.3, fontSize: '0.7rem' }}>v2.0.4-PROD</span></p>
                 </div>
             </div>
         </footer>
