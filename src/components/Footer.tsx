@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <div className="footer-brand">
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.2rem' }}>
-                            <img src="/favicon.png" alt="Logo" style={{ height: '32px', width: '32px', marginRight: '10px', borderRadius: '6px' }} />
+                            <img src="/favicon.png" alt="Logo" style={{ height: '40px', width: '40px', marginRight: '10px', borderRadius: '6px' }} />
                             <h3 style={{ margin: 0 }}>Early Bird</h3>
                         </div>
                         <p>Premium curated drops for early adopters and high-growth brands.</p>

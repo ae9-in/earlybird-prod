@@ -35,7 +35,7 @@ const Header = () => {
             >
                 <div className="container header-container">
                     <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="brand-logo" style={{ textDecoration: 'none', color: isScrolled ? 'var(--primary-dark-green)' : 'var(--text-dark)', fontWeight: 800, display: 'flex', alignItems: 'center' }}>
-                        <img src="/favicon.png" alt="Early Bird Logo" style={{ height: '32px', width: '32px', marginRight: '12px', borderRadius: '8px', objectFit: 'cover' }} />
+                        <img src="/favicon.png" alt="Early Bird Logo" style={{ height: '40px', width: '40px', marginRight: '12px', borderRadius: '8px', objectFit: 'cover' }} />
                         Early Bird<span>.</span>
                     </a>
 
