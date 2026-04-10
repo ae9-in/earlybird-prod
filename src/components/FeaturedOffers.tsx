@@ -99,7 +99,7 @@ const TiltCard = ({ card, index }: { card: PitchCard; index: number }) => {
                 style={{
                     transform: "translateZ(30px)",
                     transformStyle: "preserve-3d",
-                    backgroundColor: 'rgba(219, 230, 204, 0.1)', // Subtle Sage/Cream blend for parity
+                    backgroundColor: '#dbe6cc1a', // Sage blend in Hex-Alpha for stability
                     borderRadius: '20px',
                     border: '1px solid rgba(255, 255, 255, 0.15)',
                     backdropFilter: 'blur(10px)'
