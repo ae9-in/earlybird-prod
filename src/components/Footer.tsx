@@ -37,6 +37,14 @@ const Footer = () => {
                                 <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
+
+                        <div className="link-group">
+                            <h4>Contact</h4>
+                            <ul style={{ fontSize: '0.9rem', color: 'rgba(31, 40, 24, 0.7)', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
+                                <li>BHive Jaynagar</li>
+                                <li>+91 98800 21513</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
