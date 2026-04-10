@@ -115,13 +115,15 @@ const TiltCard = ({ card, index }: { card: any; index: number }) => {
                             <span className="p-stat-val">{card.stat}</span>
                             <span className="p-stat-label">{card.statLabel}</span>
                         </div>
-                        <motion.button
+                        <motion.a
+                            href="#partner"
                             className="pitch-action-btn"
                             whileHover={{ scale: 1.15, backgroundColor: "var(--primary-dark-green)", color: "white" }}
                             whileTap={{ scale: 0.95 }}
+                            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
                         >
                             <ArrowUpRight size={24} />
-                        </motion.button>
+                        </motion.a>
                     </div>
                 </div>
             </div>
@@ -179,7 +181,7 @@ const FeaturedOffers = () => {
 
                     <div className="view-all-wrapper" style={{ marginTop: '5rem' }}>
                         <MagneticButton intensity={0.5}>
-                            <button className="btn-primary" style={{ backgroundColor: 'var(--background-cream)', color: 'var(--primary-dark-green)', padding: '1.2rem 3.5rem', fontSize: '1.15rem' }}>Initiate Partnership</button>
+                            <a href="#partner" className="btn-primary" style={{ backgroundColor: 'var(--background-cream)', color: 'var(--primary-dark-green)', padding: '1.2rem 3.5rem', fontSize: '1.15rem', display: 'inline-block', textDecoration: 'none' }}>Initiate Partnership</a>
                         </MagneticButton>
                     </div>
                 </div>

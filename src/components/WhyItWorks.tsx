@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 import './WhyItWorks.css';
 
@@ -44,6 +44,14 @@ const WhyItWorks = () => {
                             </div>
                         </li>
                     </ul>
+
+                    <div style={{ marginTop: '3rem' }}>
+                        <a href="#partner" className="btn-secondary" style={{ padding: '0.8rem 2rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'transparent', border: '1px solid var(--primary-dark-green)', color: 'var(--primary-dark-green)', borderRadius: '100px', fontWeight: 600, transition: 'all 0.3s ease' }}
+                            onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--primary-dark-green)'; e.currentTarget.style.color = 'white'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--primary-dark-green)'; }}>
+                            Start Scaling Now <ArrowRight size={18} />
+                        </a>
+                    </div>
                 </motion.div>
 
                 <div className="why-visual">

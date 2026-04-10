@@ -26,9 +26,9 @@ const CTASection = () => {
                     </p>
 
                     <div className="cta-actions">
-                        <button className="btn-primary cta-btn">
+                        <a href="#partner" className="btn-primary cta-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                             Apply For Next Drop <Rocket size={20} />
-                        </button>
+                        </a>
                     </div>
 
                     <p className="cta-note">Applications are manually reviewed for quality.</p>

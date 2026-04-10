@@ -25,9 +25,9 @@ const Header = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className="container header-container">
-                    <div className="brand-logo">
+                    <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="brand-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
                         Early Bird<span>.</span>
-                    </div>
+                    </a>
 
                     <nav className="desktop-nav">
                         <a href="#how-it-works" className="nav-link">Process</a>
