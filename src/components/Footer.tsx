@@ -29,7 +29,7 @@ const Footer = () => {
                             <ul>
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#partner">Partner With Us</a></li>
-                                <li><a href="/admin-earlybird">Admin Login</a></li>
+                                <li><a href="/login">Admin Login</a></li>
                             </ul>
                         </div>
 
