@@ -182,7 +182,7 @@
     margin-top: 1.5rem;
 }
 
-.admin-form .form-group {
+.admin-form .admin-form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

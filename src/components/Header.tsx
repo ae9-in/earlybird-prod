@@ -7,8 +7,10 @@ import './Header.css';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
+        setIsAdmin(localStorage.getItem('earlybird_admin_auth') === 'true');
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
@@ -43,6 +45,9 @@ const Header = () => {
                         <a href="#how-it-works" className="nav-link">Process</a>
                         <a href="#deals" className="nav-link">Deals</a>
                         <a href="#why-it-works" className="nav-link">Strategy</a>
+                        <a href={isAdmin ? "/admin-earlybird" : "/login"} className="nav-link" style={{ fontWeight: 600, color: 'var(--primary-dark-green)' }}>
+                            {isAdmin ? "Dashboard" : "Login"}
+                        </a>
                         <MagneticButton intensity={0.2}>
                             <a href="#partner" className="join-btn btn-primary">Partner With Us</a>
                         </MagneticButton>
@@ -77,6 +82,9 @@ const Header = () => {
                                 <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>Process</a>
                                 <a href="#deals" onClick={() => setMobileMenuOpen(false)}>Deals</a>
                                 <a href="#why-it-works" onClick={() => setMobileMenuOpen(false)}>Strategy</a>
+                                <a href={isAdmin ? "/admin-earlybird" : "/login"} onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--primary-dark-green)', fontWeight: 600 }}>
+                                    {isAdmin ? "Dashboard" : "Login"}
+                                </a>
                                 <a href="#partner" className="mobile-join-btn" onClick={() => setMobileMenuOpen(false)}>
                                     Partner With Us
                                 </a>
