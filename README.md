@@ -29,10 +29,24 @@ A high-converting, ultra-premium landing page for **Early Bird**, featuring mode
 | `VITE_NEON_DATABASE_URL` | Neon Postgres Connection String |
 | `VITE_SITE_URL` | Production URL |
 
-## 🏗 Setup
+## 🏗 Structure
+- `frontend/`: React + Vite application.
+- `backend/`: Express.js server.
+
+## 🚀 Getting Started
+
+### Frontend
 ```bash
+cd frontend
 npm install
 npm run dev
+```
+
+### Backend
+```bash
+cd backend
+npm install
+node index.js
 ```
 
 ## 📄 License
