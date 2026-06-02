@@ -120,7 +120,7 @@ export const metadata: Metadata = {
 
   // ── VERIFICATION ───────────────────────────────────────────────────────
   verification: {
-    google: 'YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE',
+    google: 'onQGIWvyHBjzH5T4cBtxxXTLihGt8bXXFL-J3L8BJLs',
     other: {
       'msvalidate.01': 'YOUR_BING_VERIFICATION_CODE',
     },
