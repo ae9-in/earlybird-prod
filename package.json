@@ -1,0 +1,15 @@
+{
+  "name": "early-bird-root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces --legacy-peer-deps",
+    "build:frontend": "npm run build --prefix frontend",
+    "start:frontend": "npm start --prefix frontend",
+    "start:backend": "npm start --prefix backend"
+  }
+}
