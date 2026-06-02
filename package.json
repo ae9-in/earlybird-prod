@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "install:all": "npm install --workspaces --legacy-peer-deps",
+    "build": "npm run build --prefix frontend",
     "build:frontend": "npm run build --prefix frontend",
     "start:frontend": "npm start --prefix frontend",
     "start:backend": "npm start --prefix backend"
