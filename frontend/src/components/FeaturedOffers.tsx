@@ -1,3 +1,4 @@
+'use client';
 import { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';

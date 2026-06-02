@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'framer-motion';
 import { Handshake, BadgePercent, Search, Zap } from 'lucide-react';
 import './HowItWorks.css';

@@ -1,26 +1,30 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { LogIn, Mail, Lock } from 'lucide-react';
 import './Login.css';
 
-const Login = () => {
+export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const router = useRouter();
 
     useEffect(() => {
         // If already authorized, jump straight to the dashboard
-        if (localStorage.getItem('earlybird_admin_auth') === 'true') {
-            navigate('/admin-earlybird');
+        if (typeof window !== 'undefined' && localStorage.getItem('earlybird_admin_auth') === 'true') {
+            router.push('/admin-earlybird');
         }
-    }, [navigate]);
+    }, [router]);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         // Mock authentication, just redirect to admin for now
-        localStorage.setItem('earlybird_admin_auth', 'true');
-        navigate('/admin-earlybird');
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('earlybird_admin_auth', 'true');
+        }
+        router.push('/admin-earlybird');
     };
 
     return (
@@ -79,6 +83,4 @@ const Login = () => {
             </motion.div>
         </div>
     );
-};
-
-export default Login;
+}

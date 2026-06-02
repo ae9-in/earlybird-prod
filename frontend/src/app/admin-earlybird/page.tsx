@@ -1,8 +1,10 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, List, Settings, TrendingUp, Users, ClipboardList, Building, ArrowLeft, LogOut } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import './AdminDashboard.css';
+import { useRouter } from 'next/navigation';
+import './admin-earlybird.css';
 
 const MOCK_OFFERS = [
     { id: 1, brand: "Notion Template Co.", title: "Founder OS", claims: 45, status: "Active" },
@@ -22,15 +24,17 @@ const MOCK_CLAIMS = [
     { id: 3, user: "Mike R.", email: "mike@example.com", drop: "Founder OS", date: "2026-04-22", status: "Claimed" }
 ];
 
-const AdminDashboard = () => {
+export default function AdminDashboardPage() {
     const [activeTab, setActiveTab] = useState('offers');
     const [requests, setRequests] = useState(MOCK_REQUESTS);
     const [offers, setOffers] = useState(MOCK_OFFERS);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleLogout = () => {
-        localStorage.removeItem('earlybird_admin_auth');
-        navigate('/');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('earlybird_admin_auth');
+        }
+        router.push('/');
     };
 
     const handleOfferToggle = (id: number) => {
@@ -91,10 +95,10 @@ const AdminDashboard = () => {
                     >
                         <Settings size={20} /> Settings
                     </button>
-                    <a href="/" className="nav-item" style={{ marginTop: 'auto', textDecoration: 'none' }}>
+                    <button onClick={() => router.push('/')} className="nav-item" style={{ marginTop: 'auto', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}>
                         <ArrowLeft size={20} /> Back to Home
-                    </a>
-                    <button onClick={handleLogout} className="nav-item" style={{ marginTop: '0.5rem', color: '#e53e3e' }}>
+                    </button>
+                    <button onClick={handleLogout} className="nav-item" style={{ marginTop: '0.5rem', color: '#e53e3e', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}>
                         <LogOut size={20} /> Logout
                     </button>
                 </nav>
@@ -185,7 +189,7 @@ const AdminDashboard = () => {
                     {activeTab === 'add' && (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                             <h3>Add New Offer</h3>
-                            <form className="admin-form">
+                            <form className="admin-form" onSubmit={(e) => e.preventDefault()}>
                                 <div className="admin-form-group">
                                     <label>Brand Name</label>
                                     <input type="text" placeholder="e.g. Acme Inc" />
@@ -293,6 +297,4 @@ const AdminDashboard = () => {
             </main>
         </div>
     );
-};
-
-export default AdminDashboard;
+}
